@@ -1,0 +1,715 @@
+<krpano >
+	
+	<action name="mainloadscenek">
+		if (xml.scene != %1,
+		events.dispatch(onleavingscene, true);
+		
+		interruptAnimation();
+		
+		
+		
+		
+		
+		loadscene(%1, get(projection_current_params),KEEPVIEW, get(ptblendmode));
+		
+		
+		
+		
+		);
+	</action>
+	<action name="setTourLanguage">
+		if (%1 == null,
+		showlog();
+		trace("CHANGE TOUR LANGUAGE : NO LANGUAGE SET");
+		,
+		set(tour_language, %1);
+		js(eventTourChangeLanguage(get(tour_language)));
+		events.dispatch(changetourlanguage);
+		);
+	</action>	
+	
+	<events name="floorPlanEvents" 
+	onxmlcomplete="ifnot(floorPlanFloorPlanLoaded,set(tour_displayfloorplan,false););floorPlanActivateDefaultSpot();" 
+	onviewchanged="floorPlanOnViewChange();" 
+	onhidetourfloorplan="floorPlanCloseTourFloorPlan();showbutton();" 
+	onshowtourfloorplan="if(tour_displayfloorplan,floorPlanOpenTourFloorPlan();hidebutton(););" 
+	onTourStart=""
+	changetourlanguage="floorPlanChangeLanguage();"
+	keep="true" />
+	
+	//데스크탑 메뉴
+	
+	<menubar_settings 
+	logo_title_text="84A"
+	logobar_title_width="90"
+	containerbgcolor="0x333333" 
+	thumbsspace="14"
+title_of_lmenu1='거실'
+title_of_lmenu2='주방'
+title_of_lmenu3='침실1'
+title_of_lmenu4='침실2'
+title_of_lmenu5='침실3'
+title_of_lmenu6='알파룸'
+title_of_lmenu7='드레스룸'
+title_of_lmenu8='공용욕실'
+title_of_lmenu9='부부욕실'
+title_of_lmenu10='현관'
+title_of_lmenu11='베란다'
+title_of_lmenu12='다용도실'
+title_of_lmenu13='펜트리'
+title_of_lmenu14='화장대'
+
+
+
+panoid_of_lmenu1='pano85'
+panoid_of_lmenu2='pano92'
+panoid_of_lmenu3='pano93'
+panoid_of_lmenu4='pano94'
+panoid_of_lmenu5='pano95'
+panoid_of_lmenu6='pano91'
+panoid_of_lmenu7='pano88'
+panoid_of_lmenu8='pano86'
+panoid_of_lmenu9='pano90'
+panoid_of_lmenu10='pano97'
+panoid_of_lmenu11='pano89'
+panoid_of_lmenu12='pano87'
+panoid_of_lmenu13='pano96'
+panoid_of_lmenu14='pano98'
+
+ori_panoid_of_lmenu1='pano85'
+ori_panoid_of_lmenu2='pano92'
+ori_panoid_of_lmenu3='pano93'
+ori_panoid_of_lmenu4='pano94'
+ori_panoid_of_lmenu5='pano95'
+ori_panoid_of_lmenu6='pano91'
+ori_panoid_of_lmenu7='pano88'
+ori_panoid_of_lmenu8='pano86'
+ori_panoid_of_lmenu9='pano90'
+ori_panoid_of_lmenu10='pano97'
+ori_panoid_of_lmenu11='pano89'
+ori_panoid_of_lmenu12='pano87'
+ori_panoid_of_lmenu13='pano96'
+ori_panoid_of_lmenu14='pano98'
+
+
+
+
+
+
+	width_of_lmenu1='80'
+	width_of_lmenu2='80'
+	width_of_lmenu3='80'
+	width_of_lmenu4='80'
+	width_of_lmenu5='80'
+	width_of_lmenu6='80'
+	width_of_lmenu7='80'
+	width_of_lmenu8='80'
+	width_of_lmenu9='80'
+	width_of_lmenu10='80'
+	width_of_lmenu11='80'
+	width_of_lmenu12='80'
+	width_of_lmenu13='80'
+	width_of_lmenu14='80'
+	
+	x_of_lmenu1="0"
+	x_of_lmenu2="calc:menubar_settings.x_of_lmenu1 + menubar_settings.width_of_lmenu1"
+	x_of_lmenu3="calc:menubar_settings.x_of_lmenu2 + menubar_settings.width_of_lmenu2"
+	x_of_lmenu4="calc:menubar_settings.x_of_lmenu3 + menubar_settings.width_of_lmenu3"
+	x_of_lmenu5="calc:menubar_settings.x_of_lmenu4 + menubar_settings.width_of_lmenu4"
+	x_of_lmenu6="calc:menubar_settings.x_of_lmenu5 + menubar_settings.width_of_lmenu5"
+	x_of_lmenu7="calc:menubar_settings.x_of_lmenu6 + menubar_settings.width_of_lmenu6"
+	x_of_lmenu8="calc:menubar_settings.x_of_lmenu7 + menubar_settings.width_of_lmenu7"
+	x_of_lmenu9="calc:menubar_settings.x_of_lmenu8 + menubar_settings.width_of_lmenu8"
+	x_of_lmenu10="calc:menubar_settings.x_of_lmenu9 + menubar_settings.width_of_lmenu9"
+	x_of_lmenu11="calc:menubar_settings.x_of_lmenu10 + menubar_settings.width_of_lmenu10"
+	x_of_lmenu12="calc:menubar_settings.x_of_lmenu11 + menubar_settings.width_of_lmenu11"
+	x_of_lmenu13="calc:menubar_settings.x_of_lmenu12 + menubar_settings.width_of_lmenu12"
+	x_of_lmenu14="calc:menubar_settings.x_of_lmenu13 + menubar_settings.width_of_lmenu13"
+	x_of_lmenu15="calc:menubar_settings.x_of_lmenu14 + menubar_settings.width_of_lmenu14"
+	
+	
+	interior_mode="true"
+	end_of_all_lmenu="7"
+	width_of_all_lmenu=""
+	onloaded=""
+	menu_container_height="400"
+	menu_bar_height="42"
+	d_menu_max_width="calc:menubar_settings.logobar_title_width + 70 + menubar_settings.x_of_lmenu14"
+	m_menu_max_width="500"
+	
+	
+	d_menu_bgcolor='0x000000'
+	d_menu_overbgcolor='0x6bbd2d'
+	d_menu_selected_bgcolor='0x8cc738'
+	d_lmenu_css='font-family:Noto Sans KR; font-size:16px; font-weight: 400; color:#ffffff; text-align:center;'
+	d_lmenu_selected_css='font-family:Noto Sans KR; font-size:16px; font-weight: 400; color:#ffffff; text-align:center;'
+	
+	m_lmenu_css='font-family:Noto Sans KR; font-size:18px; font-weight: 500; color:#ffffff; text-align:center;'
+	m_lmenu_selected_css='font-family:Noto Sans KR; font-size:18px; font-weight: 500; color:#ffffff; text-align:center;'
+	
+	/>
+	
+	<action name="getmessage2">
+		txtadd(real_message_id, get(tour_language), "_", %2,"_title");
+		set(%1, get(data[get(real_message_id)].content));
+	</action>
+	
+	
+	<action name="show_introduction">
+		hideFloorplan();
+		
+		set(layer[intro_box].visible, true);
+		
+	</action>
+	
+	<action name="bg_automatic_scale">
+  if(layer[intro_image].loaded,
+    div(screenaspect, stagewidth, stageheight);
+    div(imageaspect, layer[intro_image].imagewidth, layer[intro_image].imageheight);
+    if(imageaspect GT screenaspect, 
+      set(layer[intro_image].width,100%); set(layer[intro_image].height,prop);
+     ,
+      set(layer[intro_image].width,prop); set(layer[intro_image].height,100%);
+    );
+  );
+</action>
+	
+	
+	<layer name="intro_box"  type="container" align="center" x='0' y='0'  bgcolor="0x000000" bgalpha="0.8" keep='true' visible='false' width='100%' height='100%'     zorder='92' >
+		<layer name="intro_image"  type="image" align="center" x='0' y='0' url='%HTMLPATH%/indexdata/graphics/introduction.jpg' keep='true' visible='true' width='prop' height='100%'     zorder='92' onclick="set(layer[intro_box].visible, false);menubarbyscale();" onloaded='bg_automatic_scale();'  />
+		<layer name="intro_image_close_btn" parent='intro_box' type="image" url='%HTMLPATH%/indexdata/graphics/x_w.png' align='righttop' x='10' y='0' width="50" height="prop" visible='true' keep='true'  onclick="set(layer[intro_box].visible, false);menubarbyscale();"  zorder='94' />
+	</layer>
+	
+	//팝업시 백그라운드 배경
+	<layer name="bg_mask"  type="container" align="center" x='0' y='0'  bgcolor="0x000000" bgalpha="0.7" keep='true' visible='false' width='100%' height='100%'     zorder='2' />
+	
+	<style name="style_lmenu_d" parent='menu_container' tag='d_lmenu' type="text" keep="true"   align="lefttop"  height="100%"  bgalpha='0' bgcolor='0x000000'  css="font-family:Noto Sans KR; font-size:16px; font-weight: 500; color:#333333; text-align:center;"   vcenter="true" padding="" wordwrap="true" bgborder="0 0xffffff" bgroundedge="0" bgshadow="" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="" zorder="11"  onover="set(bgborder,4);" onout="set(bgborder,0);"  />
+	
+	<!--onover="set(bgcolor, get(menubar_settings.d_menu_overbgcolor));" onout="set(bgcolor, get(menubar_settings.d_menu_bgcolor));"  -->
+	
+	<style name="style_smenu_d" parent='menu_container' tag='d_smenu' type="text" keep="true"   align="lefttop"  height="40"  bgalpha='0.2' bgcolor='calc:menubar_settings.d_menu_bgcolor'  css="font-family:Noto Sans KR; font-size:12px; font-weight: 500; color:#333333; text-align:center;"   vcenter="true" padding="0 10 0 10" wordwrap="true" bgborder="0" bgroundedge="0" bgshadow="" txtshadow="" mergedalpha="false" interactivecontent="false" onautosized="" zorder="9" onover="set(bgalpha, 0.9);set(bgcolor, get(menubar_settings.d_menu_overbgcolor));" onout="set(bgalpha, 0.2);set(bgcolor, get(menubar_settings.d_menu_bgcolor));"  />
+	
+	<action name='d_menu_hover_action;'>
+		
+	</action>
+	
+	<style name="d_menu_container_style" type="container"  align="lefttop"  y="0"  height="calc:menubar_settings.menu_container_height" bgcolor="0x333333" bgalpha="0.2" keep='true' visible='true' zorder="9"  enabled="true" />
+	
+	<layer name="top_menu_container" type="container" align="lefttop" x='0' y='0'  maskchildren="true" width='100%' height='calc:menubar_settings.menu_bar_height'  bgcolor='0xffffff' bgalpha="0.6" keep='true' visible='true' enabled="true" onout=""  zorder='15'   >
+		<!--	<layer name="top_menu_container_back" parent="top_menu_container" type="image" align="lefttop" x='0' y='calc:menubar_settings.menu_container_height-40'  url='%HTMLPATH%/indexdata/graphics/blankpic.png' width='100%' height='40'   keep='true' visible='true' enabled="true" onover=""  onout=""  zorder='8' />-->
+		
+		<layer name="res_menu_container" parent="top_menu_container" type="container" align="centertop" x='0' y='0'  maskchildren="true" width='100%' height='100%' bgalpha='1' bgcolor='calc:menubar_settings.containerbgcolor' keep='true' visible='true' zorder="10"  onover="" >
+			
+			<layer name="logo_container" type="container" parent="res_menu_container" align="lefttop" y="0" width="calc:menubar_settings.logobar_title_width + 80" height="100%" bgcolor="0x000000" bgalpha="0">
+				
+				<layer name="logo_item" type="text" keep="true"    bgalpha='1' bgcolor='0x6bbd2d'  css="font-family:Noto Sans KR; font-size:18px; font-weight: 500; color:#ffffff; text-align:center;"   vcenter="true" padding="" wordwrap="true" bgborder="0" bgroundedge="0" bgshadow="" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="" align='lefttop' x='0' y='0' width="calc:menubar_settings.logobar_title_width" height="100%" html="calc:menubar_settings.logo_title_text" onclick='close_video_window();close_side_info_window();close_modal_window();mainloadscene(pano47693);'  />
+				
+				
+			</layer>
+			
+			
+		</layer>
+		<!--onloaded="add(_nt00,end_of_all_menu,1);txtadd(_nt01,'menubar_settings.x_of_lmenu',get(_nt00));set(width,(get(_nt01));"-->
+		<layer name="menu_container" type="container" parent="top_menu_container" align="righttop" x="0" y="0" width="calc:menubar_settings.x_of_lmenu15" height="100%" bgcolor="0x000000" bgalpha="0" zorder="11" enabled="true"   >
+			
+		<layer name='d_menu_item_lmenu1' style='style_lmenu_d' x='calc:menubar_settings.x_of_lmenu1' width='calc:menubar_settings.width_of_lmenu1' html='calc:menubar_settings.title_of_lmenu1'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu1))'  />
+<layer name='d_menu_item_lmenu2' style='style_lmenu_d' x='calc:menubar_settings.x_of_lmenu2' width='calc:menubar_settings.width_of_lmenu2' html='calc:menubar_settings.title_of_lmenu2'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu2))'  />
+<layer name='d_menu_item_lmenu3' style='style_lmenu_d' x='calc:menubar_settings.x_of_lmenu3' width='calc:menubar_settings.width_of_lmenu3' html='calc:menubar_settings.title_of_lmenu3'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu3))'  />
+<layer name='d_menu_item_lmenu4' style='style_lmenu_d' x='calc:menubar_settings.x_of_lmenu4' width='calc:menubar_settings.width_of_lmenu4' html='calc:menubar_settings.title_of_lmenu4'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu4))'  />
+<layer name='d_menu_item_lmenu5' style='style_lmenu_d' x='calc:menubar_settings.x_of_lmenu5' width='calc:menubar_settings.width_of_lmenu5' html='calc:menubar_settings.title_of_lmenu5'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu5))'  />
+<layer name='d_menu_item_lmenu6' style='style_lmenu_d' x='calc:menubar_settings.x_of_lmenu6' width='calc:menubar_settings.width_of_lmenu6' html='calc:menubar_settings.title_of_lmenu6'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu6))'  />
+<layer name='d_menu_item_lmenu7' style='style_lmenu_d' x='calc:menubar_settings.x_of_lmenu7' width='calc:menubar_settings.width_of_lmenu7' html='calc:menubar_settings.title_of_lmenu7'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu7))'  />
+<layer name='d_menu_item_lmenu8' style='style_lmenu_d' x='calc:menubar_settings.x_of_lmenu8' width='calc:menubar_settings.width_of_lmenu8' html='calc:menubar_settings.title_of_lmenu8'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu8))'  />
+<layer name='d_menu_item_lmenu9' style='style_lmenu_d' x='calc:menubar_settings.x_of_lmenu9' width='calc:menubar_settings.width_of_lmenu9' html='calc:menubar_settings.title_of_lmenu9'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu9))'  />
+<layer name='d_menu_item_lmenu10' style='style_lmenu_d' x='calc:menubar_settings.x_of_lmenu10' width='calc:menubar_settings.width_of_lmenu10' html='calc:menubar_settings.title_of_lmenu10'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu10))'  />
+<layer name='d_menu_item_lmenu11' style='style_lmenu_d' x='calc:menubar_settings.x_of_lmenu11' width='calc:menubar_settings.width_of_lmenu11' html='calc:menubar_settings.title_of_lmenu11'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu11))'  />
+<layer name='d_menu_item_lmenu12' style='style_lmenu_d' x='calc:menubar_settings.x_of_lmenu12' width='calc:menubar_settings.width_of_lmenu12' html='calc:menubar_settings.title_of_lmenu12'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu12))'  />
+<layer name='d_menu_item_lmenu13' style='style_lmenu_d' x='calc:menubar_settings.x_of_lmenu13' width='calc:menubar_settings.width_of_lmenu13' html='calc:menubar_settings.title_of_lmenu13'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu13))'  />
+<layer name='d_menu_item_lmenu14' style='style_lmenu_d' x='calc:menubar_settings.x_of_lmenu14' width='calc:menubar_settings.width_of_lmenu14' html='calc:menubar_settings.title_of_lmenu14'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu14))'  />
+
+
+
+
+			
+		</layer>
+		
+		
+		<layer name="current_title" keep="true" zorder="11" type="text" align="topright" x="60" y="5" bg="false" bgborder="0" alpha="1" visible="true" capture="false" handcursor="false" enabled="false" interactivecontent="false"  txtshadow="" css="text-align:right;color:#333333;font-family:Noto Sans KR;font-size:16px;" html="" onloaded="updatetitle();" />
+		
+		<layer name="menu_button" type="image" url='%HTMLPATH%/indexdata/graphics/menu_icon_thin.png' align='righttop' x='15' y='5' width="30" height="prop" visible='true' keep='true' zorder="11" onclick="hideFloorplan();set(layer[mobile_menu_container].visible, true);" />
+		
+	</layer>
+	
+	
+	<action name="updatetitle">
+		getmessage(layer[current_title].html, get(scene[get(xml.scene)].titleid));
+		escape(layer[current_title].html);
+	</action>
+	
+	
+	
+	//모바일 메뉴
+	
+	<scroll_settings 
+	columns="3"
+	thumbcount="24" 
+	thumbsspace="9"
+	
+	
+	/>
+	
+	
+	
+	<style name="style_lmenu_m" parent='scrollareamobile' tag='m_lmenu' type="text" keep="true"   align="centertop" width="80%" height="40"  bgalpha='0.7' bgcolor='0x000000'  css="font-family:Noto Sans KR; font-size:18px; font-weight: 500; color:#ffffff; text-align:center;"   vcenter="false" padding="10" wordwrap="true" bgborder="1 0xeeeeee 0.7" bgroundedge="2" bgshadow="" txtshadow="" mergedalpha="true" interactivecontent="false" onautosized="" />
+	
+	
+	
+	<layer name="mobile_menu_container" type="container" align="centertop" x='0' y='65' width='100%' height='calc:get(stageheight) - 100' bgalpha='0.5' bgcolor='0x000000' keep='true' visible='false' zorder='50' >
+		
+		<layer name="menu_close_button" parent="mobile_menu_container" type="image" url='%HTMLPATH%/indexdata/graphics/x_w.png' align='righttop' x='10' y='0' width="50" height="prop" visible='true' keep='true' zorder="11" onclick="set(layer[mobile_menu_container].visible, false);" />
+		
+		
+		<layer name="scrollareamobile" parent="mobile_menu_container" url="%HTMLPATH%/indexdata/graphics/scrollarea.js" align="centertop" width="95%" height="1000" direction="v">
+			<layer name="thumb_background" parent="scrollareamobile" type="container" align="centertop" x="0" y="50" width="90%" height="2400" bgcolor="0x880000" bgalpha="0.0">
+			
+	<layer name='m_menu_item_lmenu1' style='style_lmenu_m' x='0' y='10'   html='calc:menubar_settings.title_of_lmenu1'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu1));set(layer[mobile_menu_container].visible, false);'  />
+<layer name='m_menu_item_lmenu2' style='style_lmenu_m' x='0' y='60'   html='calc:menubar_settings.title_of_lmenu2'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu2));set(layer[mobile_menu_container].visible, false);'  />
+<layer name='m_menu_item_lmenu3' style='style_lmenu_m' x='0' y='110'   html='calc:menubar_settings.title_of_lmenu3'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu3));set(layer[mobile_menu_container].visible, false);'  />
+<layer name='m_menu_item_lmenu4' style='style_lmenu_m' x='0' y='160'   html='calc:menubar_settings.title_of_lmenu4'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu4));set(layer[mobile_menu_container].visible, false);'  />
+<layer name='m_menu_item_lmenu5' style='style_lmenu_m' x='0' y='210'   html='calc:menubar_settings.title_of_lmenu5'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu5));set(layer[mobile_menu_container].visible, false);'  />
+<layer name='m_menu_item_lmenu6' style='style_lmenu_m' x='0' y='260'   html='calc:menubar_settings.title_of_lmenu6'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu6));set(layer[mobile_menu_container].visible, false);'  />
+<layer name='m_menu_item_lmenu7' style='style_lmenu_m' x='0' y='310'   html='calc:menubar_settings.title_of_lmenu7'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu7));set(layer[mobile_menu_container].visible, false);'  />
+<layer name='m_menu_item_lmenu8' style='style_lmenu_m' x='0' y='360'   html='calc:menubar_settings.title_of_lmenu8'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu8));set(layer[mobile_menu_container].visible, false);'  />
+<layer name='m_menu_item_lmenu9' style='style_lmenu_m' x='0' y='410'   html='calc:menubar_settings.title_of_lmenu9'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu9));set(layer[mobile_menu_container].visible, false);'  />
+<layer name='m_menu_item_lmenu10' style='style_lmenu_m' x='0' y='460'   html='calc:menubar_settings.title_of_lmenu10'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu10));set(layer[mobile_menu_container].visible, false);'  />
+<layer name='m_menu_item_lmenu11' style='style_lmenu_m' x='0' y='510'   html='calc:menubar_settings.title_of_lmenu11'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu11));set(layer[mobile_menu_container].visible, false);'  />
+<layer name='m_menu_item_lmenu12' style='style_lmenu_m' x='0' y='560'   html='calc:menubar_settings.title_of_lmenu12'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu12));set(layer[mobile_menu_container].visible, false);'  />
+<layer name='m_menu_item_lmenu13' style='style_lmenu_m' x='0' y='610'   html='calc:menubar_settings.title_of_lmenu13'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu13));set(layer[mobile_menu_container].visible, false);'  />
+<layer name='m_menu_item_lmenu14' style='style_lmenu_m' x='0' y='660'   html='calc:menubar_settings.title_of_lmenu14'  onclick='mainloadscene(get(menubar_settings.panoid_of_lmenu14));set(layer[mobile_menu_container].visible, false);'  />
+
+				
+			</layer>
+		</layer>
+	</layer>
+	
+	<layer name="floorplan_btn_on" type="image" url='%HTMLPATH%/indexdata/graphics/floorplan_off.png' align='rightbottom' x='10' y='10' width="80" height="prop" visible='true' keep='true' zorder="11" onclick="hideFloorplan();set(layer[floorplan_btn_off].visible, true);set(layer[floorplan_btn_on].visible, false);" />
+	<layer name="floorplan_btn_off" type="image" url='%HTMLPATH%/indexdata/graphics/floorplan_on.png' align='rightbottom' x='10' y='10' width="80" height="prop" visible='false' keep='true' zorder="11" onclick="showFloorplan();set(layer[floorplan_btn_off].visible, false);set(layer[floorplan_btn_on].visible, true);" />
+	
+	
+	
+	<!--
+	<layer name='dp_btn_on'  type='image' url='%HTMLPATH%/indexdata/graphics/dp_off.png' align='leftbottom' x='300' y='10' width='80' height='prop' visible='true' keep='' zorder='11' onclick='mainloadscenek(get(dpoff_panoid));dp_btn_switch_on();'  />
+	<layer name='dp_btn_off'  type='image' url='%HTMLPATH%/indexdata/graphics/dp_on.png' align='leftbottom' x='300' y='10' width='80' height='prop' visible='false' keep='' zorder='11' onclick='mainloadscenek(get(dpon_panoid));dp_btn_switch_off();'  />
+	-->
+	<events name="fitmenuwidth" keep="true" onresize="menubarbyscale();" />
+	
+	
+	<action name="menubarbyscale" >
+		set(_screenwidth,get(stagewidth));
+		set(_menuwidth,get(menubar_settings.d_menu_max_width));
+		set(_menuwidth_m,get(menubar_settings.m_menu_max_width));
+		if(_screenwidth GE _menuwidth 
+		,if( device.desktop == false , 
+		     mobile_mode(); ,
+			 wide_mode();
+			 );
+		,mobile_mode();
+		);
+		set(layer[mobile_menu_container].height, calc(get(stageheight) - 100));
+		if(_screenwidth GT _menuwidth_m
+		,set(layer[mobile_menu_container].width, get(menubar_settings.m_menu_max_width));
+		,set(layer[mobile_menu_container].width, '100%');
+		);
+	</action>
+	
+	<action name="full_menu_byscale" >
+		set(_screenwidth,get(stagewidth));
+		
+		if(_screenwidth LE 1000 AND (_screenwidth GT 700)	,div(mok,get(menubar_settings.submenu_of_menu1),3);add(submenu_column,mok,1);
+		,(_screenwidth GT 400) AND (_screenwidth LE 700) ,div(mok,get(menubar_settings.submenu_of_menu1),2);add(submenu_column,mok,1);
+		_screenwidth LE 400 , set(submenu_column,get(menubar_settings.submenu_of_menu1));
+		);
+		
+		for(set(i, 0), i LT layer.count, inc(i), 
+		txtadd(_momenuname,menu_item,get(i));
+	    set(layer[get(_momenuname)].backgroundalpha,0.8);
+		); 
+		);
+		
+	</action>
+	
+	
+	
+	<action name="mobile_mode">
+		set(layer[menu_container].visible, false);
+		set(layer[current_title].visible, true);
+		set(layer[menu_button].visible, true);
+		set(layer[dp_btn_on].visible, false);
+		set(layer[dp_btn_off].visible, false);
+		hideFloorplan();
+		set(layer[res_menu_container].onover, '');
+		set(layer[floorplan_btn_on].visible, false);
+		set(layer[floorplan_btn_off].visible, true);
+		
+	</action>
+	
+	<action name="wide_mode">
+		set(layer[menu_container].visible, true);
+		set(layer[current_title].visible, false);
+		set(layer[menu_button].visible, false);
+		if(menubar_settings.interior_mode == true,
+		set(layer[dp_btn_on].visible, true);
+		set(layer[dp_btn_off].visible, false);,
+		set(layer[dp_btn_on].visible, false);
+		set(layer[dp_btn_off].visible, true);
+		);
+		showFloorplan();
+		set(layer[mobile_menu_container].visible, false);
+		set(layer[floorplan_btn_on].visible, true);
+		set(layer[floorplan_btn_off].visible, false);
+	</action>
+	
+	
+	
+	<action name="change_lang_sound">
+		if(tour_language == 'kr' ,lang_select_korean(););
+		if(tour_language == 'en' ,lang_select_english(););
+	</action>
+	
+	
+	
+	<events   onnewscene="displayonlythisscene();"  />
+	
+	<action name="displayonlythisscene" >
+		updatetitle();
+		d_menu_css_reset();
+		m_menu_css_reset();
+		set(dpon_panoid,'');
+		set(dpoff_panoid,'');
+		showHotspots();
+		
+		
+	if(xml.scene == 'pano85' , set(dpon_panoid,get(menubar_settings.ori_panoid_of_lmenu1));set(dpoff_panoid,get(menubar_settings.alt_panoid_of_lmenu1));set(layer[d_menu_item_lmenu1].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[d_menu_item_lmenu1].css,get(menubar_settings.d_lmenu_selected_css));set(layer[d_menu_item_lmenu1].bgalpha,0.9);set(layer[m_menu_item_lmenu1].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[m_menu_item_lmenu1].css,get(menubar_settings.m_lmenu_selected_css)););
+if(xml.scene == 'pano92' , set(dpon_panoid,get(menubar_settings.ori_panoid_of_lmenu2));set(dpoff_panoid,get(menubar_settings.alt_panoid_of_lmenu2));set(layer[d_menu_item_lmenu2].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[d_menu_item_lmenu2].css,get(menubar_settings.d_lmenu_selected_css));set(layer[d_menu_item_lmenu2].bgalpha,0.9);set(layer[m_menu_item_lmenu2].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[m_menu_item_lmenu2].css,get(menubar_settings.m_lmenu_selected_css)););
+if(xml.scene == 'pano93' , set(dpon_panoid,get(menubar_settings.ori_panoid_of_lmenu3));set(dpoff_panoid,get(menubar_settings.alt_panoid_of_lmenu3));set(layer[d_menu_item_lmenu3].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[d_menu_item_lmenu3].css,get(menubar_settings.d_lmenu_selected_css));set(layer[d_menu_item_lmenu3].bgalpha,0.9);set(layer[m_menu_item_lmenu3].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[m_menu_item_lmenu3].css,get(menubar_settings.m_lmenu_selected_css)););
+if(xml.scene == 'pano94' , set(dpon_panoid,get(menubar_settings.ori_panoid_of_lmenu4));set(dpoff_panoid,get(menubar_settings.alt_panoid_of_lmenu4));set(layer[d_menu_item_lmenu4].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[d_menu_item_lmenu4].css,get(menubar_settings.d_lmenu_selected_css));set(layer[d_menu_item_lmenu4].bgalpha,0.9);set(layer[m_menu_item_lmenu4].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[m_menu_item_lmenu4].css,get(menubar_settings.m_lmenu_selected_css)););
+if(xml.scene == 'pano95' , set(dpon_panoid,get(menubar_settings.ori_panoid_of_lmenu5));set(dpoff_panoid,get(menubar_settings.alt_panoid_of_lmenu5));set(layer[d_menu_item_lmenu5].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[d_menu_item_lmenu5].css,get(menubar_settings.d_lmenu_selected_css));set(layer[d_menu_item_lmenu5].bgalpha,0.9);set(layer[m_menu_item_lmenu5].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[m_menu_item_lmenu5].css,get(menubar_settings.m_lmenu_selected_css)););
+if(xml.scene == 'pano91' , set(dpon_panoid,get(menubar_settings.ori_panoid_of_lmenu6));set(dpoff_panoid,get(menubar_settings.alt_panoid_of_lmenu6));set(layer[d_menu_item_lmenu6].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[d_menu_item_lmenu6].css,get(menubar_settings.d_lmenu_selected_css));set(layer[d_menu_item_lmenu6].bgalpha,0.9);set(layer[m_menu_item_lmenu6].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[m_menu_item_lmenu6].css,get(menubar_settings.m_lmenu_selected_css)););
+if(xml.scene == 'pano88' , set(dpon_panoid,get(menubar_settings.ori_panoid_of_lmenu7));set(dpoff_panoid,get(menubar_settings.alt_panoid_of_lmenu7));set(layer[d_menu_item_lmenu7].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[d_menu_item_lmenu7].css,get(menubar_settings.d_lmenu_selected_css));set(layer[d_menu_item_lmenu7].bgalpha,0.9);set(layer[m_menu_item_lmenu7].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[m_menu_item_lmenu7].css,get(menubar_settings.m_lmenu_selected_css)););
+if(xml.scene == 'pano86' , set(dpon_panoid,get(menubar_settings.ori_panoid_of_lmenu8));set(dpoff_panoid,get(menubar_settings.alt_panoid_of_lmenu8));set(layer[d_menu_item_lmenu8].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[d_menu_item_lmenu8].css,get(menubar_settings.d_lmenu_selected_css));set(layer[d_menu_item_lmenu8].bgalpha,0.9);set(layer[m_menu_item_lmenu8].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[m_menu_item_lmenu8].css,get(menubar_settings.m_lmenu_selected_css)););
+if(xml.scene == 'pano90' , set(dpon_panoid,get(menubar_settings.ori_panoid_of_lmenu9));set(dpoff_panoid,get(menubar_settings.alt_panoid_of_lmenu9));set(layer[d_menu_item_lmenu9].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[d_menu_item_lmenu9].css,get(menubar_settings.d_lmenu_selected_css));set(layer[d_menu_item_lmenu9].bgalpha,0.9);set(layer[m_menu_item_lmenu9].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[m_menu_item_lmenu9].css,get(menubar_settings.m_lmenu_selected_css)););
+if(xml.scene == 'pano97' , set(dpon_panoid,get(menubar_settings.ori_panoid_of_lmenu10));set(dpoff_panoid,get(menubar_settings.alt_panoid_of_lmenu10));set(layer[d_menu_item_lmenu10].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[d_menu_item_lmenu10].bgalpha,0.9);set(layer[m_menu_item_lmenu10].bgcolor,get(menubar_settings.d_menu_selected_bgcolor)););
+if(xml.scene == 'pano89' , set(dpon_panoid,get(menubar_settings.ori_panoid_of_lmenu11));set(dpoff_panoid,get(menubar_settings.alt_panoid_of_lmenu11));set(layer[d_menu_item_lmenu11].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[d_menu_item_lmenu11].bgalpha,0.9);set(layer[m_menu_item_lmenu11].bgcolor,get(menubar_settings.d_menu_selected_bgcolor)););
+if(xml.scene == 'pano87' , set(dpon_panoid,get(menubar_settings.ori_panoid_of_lmenu12));set(dpoff_panoid,get(menubar_settings.alt_panoid_of_lmenu12));set(layer[d_menu_item_lmenu12].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[d_menu_item_lmenu12].bgalpha,0.9);set(layer[m_menu_item_lmenu12].bgcolor,get(menubar_settings.d_menu_selected_bgcolor)););
+if(xml.scene == 'pano96' , set(dpon_panoid,get(menubar_settings.ori_panoid_of_lmenu13));set(dpoff_panoid,get(menubar_settings.alt_panoid_of_lmenu13));set(layer[d_menu_item_lmenu13].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[d_menu_item_lmenu13].bgalpha,0.9);set(layer[m_menu_item_lmenu13].bgcolor,get(menubar_settings.d_menu_selected_bgcolor)););
+if(xml.scene == 'pano98' , set(dpon_panoid,get(menubar_settings.ori_panoid_of_lmenu14));set(dpoff_panoid,get(menubar_settings.alt_panoid_of_lmenu14));set(layer[d_menu_item_lmenu14].bgcolor,get(menubar_settings.d_menu_selected_bgcolor));set(layer[d_menu_item_lmenu14].bgalpha,0.9);set(layer[m_menu_item_lmenu14].bgcolor,get(menubar_settings.d_menu_selected_bgcolor)););
+
+
+		<!--set(layer[d_menu_item_smenu1_3].css,get(menubar_settings.d_smenu_selected_css));-->
+	</action>
+	
+	
+	
+	
+    <action name="dp_btn_switch_on" >
+		set(layer[dp_btn_off].visible, true);
+		set(layer[dp_btn_on].visible, false);
+		change_to_dpoff_mode();
+	</action>
+    <action name="dp_btn_switch_off" >
+		set(layer[dp_btn_off].visible, false);
+		set(layer[dp_btn_on].visible, true);
+		change_to_dpon_mode();
+	</action>
+	
+	<action name="change_to_dpon_mode">
+		set(menubar_settings.interior_mode, true);
+		set(layer[d_menu_item_lmenu1].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu1))');
+		set(layer[d_menu_item_lmenu2].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu2))');
+		set(layer[d_menu_item_lmenu3].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu3))');
+		set(layer[d_menu_item_lmenu4].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu4))');
+		set(layer[d_menu_item_lmenu5].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu5))');
+		set(layer[d_menu_item_lmenu6].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu6))');
+		set(layer[d_menu_item_lmenu7].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu7))');
+		set(layer[d_menu_item_lmenu8].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu8))');
+		set(layer[d_menu_item_lmenu9].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu9))');
+		set(layer[d_menu_item_lmenu10].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu10))');
+		set(layer[d_menu_item_lmenu11].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu11))');
+		set(layer[d_menu_item_lmenu12].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu12))');
+		set(layer[d_menu_item_lmenu13].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu13))');
+		
+		set(layer[m_menu_item_lmenu1].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu1));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu2].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu2));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu3].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu3));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu4].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu4));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu5].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu5));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu6].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu6));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu7].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu7));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu8].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu8));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu9].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu9));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu10].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu10));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu11].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu11));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu12].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu12));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu13].onclick,'mainloadscene(get(menubar_settings.ori_panoid_of_lmenu13));set(layer[mobile_menu_container].visible, false);');
+		
+		
+		
+	</action>
+	<action name="change_to_dpoff_mode">
+		set(menubar_settings.interior_mode, false);
+		set(layer[d_menu_item_lmenu1].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu1))');
+		set(layer[d_menu_item_lmenu2].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu2))');
+		set(layer[d_menu_item_lmenu3].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu3))');
+		set(layer[d_menu_item_lmenu4].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu4))');
+		set(layer[d_menu_item_lmenu5].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu5))');
+		set(layer[d_menu_item_lmenu6].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu6))');
+		set(layer[d_menu_item_lmenu7].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu7))');
+		set(layer[d_menu_item_lmenu8].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu8))');
+		set(layer[d_menu_item_lmenu9].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu9))');
+		set(layer[d_menu_item_lmenu10].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu10))');
+		set(layer[d_menu_item_lmenu11].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu11))');
+		set(layer[d_menu_item_lmenu12].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu12))');
+		set(layer[d_menu_item_lmenu13].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu13))');
+		
+		
+		set(layer[m_menu_item_lmenu1].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu1));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu2].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu2));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu3].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu3));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu4].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu4));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu5].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu5));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu6].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu6));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu7].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu7));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu8].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu8));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu9].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu9));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu10].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu10));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu11].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu11));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu12].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu12));set(layer[mobile_menu_container].visible, false);');
+		set(layer[m_menu_item_lmenu13].onclick,'mainloadscene(get(menubar_settings.alt_panoid_of_lmenu13));set(layer[mobile_menu_container].visible, false);');
+	</action>
+	<action name='d_menu_css_reset'>
+		for(set(i, 0), i LT layer.count, inc(i), 
+		if(layer[get(i)].tag == d_lmenu, 
+		css_reset_to_dl(get(i)); 
+		); 
+		
+		);
+		
+	</action>
+	
+	
+	<action name='m_menu_css_reset'>
+		for(set(i, 0), i LT layer.count, inc(i), 
+		if(layer[get(i)].tag == m_lmenu, 
+		css_reset_to_ml(get(i)); 
+		); 
+		
+		);
+		
+	</action>
+	
+	<action name="css_reset_to_dl"> 
+		set(layer[%1].css, get(menubar_settings.d_lmenu_css));
+		set(layer[%1].bgcolor, get(menubar_settings.d_menu_bgcolor));
+		set(layer[%1].bgalpha, 0);
+		set(layer[%1].css, get(menubar_settings.d_lmenu_css));
+		
+	
+	</action>
+	<action name="css_reset_to_ds"> 
+		set(layer[%1].css, get(menubar_settings.d_smenu_css));
+		
+	</action>
+	<action name="css_reset_to_ml"> 
+		set(layer[%1].css, get(menubar_settings.m_lmenu_css));
+		set(layer[%1].bgcolor, get(menubar_settings.d_menu_bgcolor));
+		
+	</action>
+	<action name="css_reset_to_ms"> 
+		set(layer[%1].css, get(menubar_settings.m_smenu_css));
+		
+	</action>
+	
+	
+	
+	
+	
+	<action name="displayImage">
+		if (layer[displayedStandardImage],
+		if(layer[displayedStandardImage].doNotDeleteMe,
+        set(layer[displayedStandardImage].currentCall, false);
+        set(layer[displayedStandardImage].doNotDeleteMe, false);
+        
+        if (%1 == layer[displayedStandardImage].url,
+		applyDisplayedImageObjectAnimation(%8);
+        ,
+		setDisplayedImageObjectParameters(%1, %2, %3, %4, %5, %6, %7, %8, %9, %10);
+        );
+		,
+        set(layer[displayedStandardImage].currentCall, false);
+        set(layer[displayedStandardImage].doNotDeleteMe, true);
+        events.dispatch(onremovedisplayedobject);
+        delayedcall(0.2,displayImage(%1, %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12););
+		);
+		,
+		if(%10,
+        addlayer(displayedStandardImageOverlay);
+        set(layer[displayedStandardImageOverlay].keep, false);
+        set(layer[displayedStandardImageOverlay].width, 100%);
+        set(layer[displayedStandardImageOverlay].height, 100%);
+        set(layer[displayedStandardImageOverlay].type, container);
+        set(layer[displayedStandardImageOverlay].zorder, 98);
+        set(layer[displayedStandardImageOverlay].visible, false);
+        set(layer[displayedStandardImageOverlay].onclick, applyDisplayedImageObjectAnimation(%8););
+        set(layer[displayedStandardImageOverlay].bgcolor, "0x%11");
+        set(layer[displayedStandardImageOverlay].bgalpha, %12);
+        set(layer[displayedStandardImageOverlay].bgcapture, true);
+		);
+		addlayer(displayedStandardImage);
+		set(layer[displayedStandardImage].keep, false);
+		set(layer[displayedStandardImage].onclick, applyDisplayedImageObjectAnimation(%8););
+		set(layer[displayedStandardImage].zorder , 99);
+		set(layer[displayedStandardImage].currentCall, true);
+		set(layer[displayedStandardImage].doNotDeleteMe, true);
+		set(layer[displayedStandardImage].onloaded, resizeDisplayedImageObject());
+		events.dispatch(onremovedisplayedobject);
+		delayedcall(0.2,displayImage(%1, %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12););
+		set(layer[displayedStandardImage].visible, false);
+		);
+	</action>
+	<action name="applyDisplayedImageObjectAnimation">resumeautorotation(forcehotspot);
+		
+		if (%1,
+		stoptween(layer[displayedStandardImage].width, layer[displayedStandardImage].height);
+		tween(layer[displayedStandardImage].width|layer[displayedStandardImage].height, 1|1, 1, easeOutQuad, WAIT);
+		if(layer[displayedStandardImage].overlay,removelayer(displayedStandardImageOverlay););removelayer(displayedStandardImage);
+		,
+		if(layer[displayedStandardImage].overlay,removelayer(displayedStandardImageOverlay););removelayer(displayedStandardImage);
+		);
+	</action>
+	<action name="setDisplayedImageObjectParameters">
+		set(layer[displayedStandardImage].url       , %1);
+		set(layer[displayedStandardImage].align     , %2);
+		set(layer[displayedStandardImage].x         , %3);
+		set(layer[displayedStandardImage].y         , %4);
+		set(layer[displayedStandardImage].imgwidth  , %5);
+		set(layer[displayedStandardImage].imgheight , %6);
+		set(layer[displayedStandardImage].animated  , %8);
+		set(layer[displayedStandardImage].applyratio, %9);
+		set(layer[displayedStandardImage].overlay   , %10);
+		if (%7,pauseautorotation(forcehotspot);
+		);
+	</action>
+	<action name="resizeDisplayedImageObject">
+		if(layer[displayedStandardImage].url,
+		set(layer[displayedStandardImage].fullwidth, get(layer[displayedStandardImage].width));
+		set(layer[displayedStandardImage].fullheight, get(layer[displayedStandardImage].height));
+		if(layer[displayedStandardImage].animated,
+		set(layer[displayedStandardImage].width , 1);
+		set(layer[displayedStandardImage].height, 1);
+		);
+		if(layer[displayedStandardImage].imgwidth != "" AND layer[displayedStandardImage].imgheight != "",
+		if(layer[displayedStandardImage].imgwidth == "prop",
+        set(tempDisplayedImageObjectHeight, get(layer[displayedStandardImage].imgheight));
+        indexoftxt(tempDisplayedImageObjectHeightPercent, get(tempDisplayedImageObjectHeight), "%");
+        if(tempDisplayedImageObjectHeightPercent GT 0,
+		txtreplace(tempDisplayedImageObjectHeight, '%', '');
+		mul(tempDisplayedImageObjectHeight, get(stageheight));
+		div(tempDisplayedImageObjectHeight, 100);
+		Math.round(tempDisplayedImageObjectHeight);
+        );
+        mul(flyingImgWidth,get(layer[displayedStandardImage].fullwidth),get(tempDisplayedImageObjectHeight));
+        div(flyingImgWidth,get(layer[displayedStandardImage].fullheight));
+        Math.round(flyingImgWidth);
+        set(layer[displayedStandardImage].imgwidth , get(flyingImgWidth));
+        set(layer[displayedStandardImage].imgheight, get(tempDisplayedImageObjectHeight));
+		,
+        if(layer[displayedStandardImage].imgheight == "prop",
+		set(tempDisplayedImageObjectWidth, get(layer[displayedStandardImage].imgwidth));
+		indexoftxt(tempDisplayedImageObjectWidthPercent, get(tempDisplayedImageObjectWidth), "%");
+		if(tempDisplayedImageObjectWidthPercent GT 0,
+		txtreplace(tempDisplayedImageObjectWidth, '%', '');
+		mul(tempDisplayedImageObjectWidth, get(stagewidth));
+		div(tempDisplayedImageObjectWidth, 100);
+		Math.round(tempDisplayedImageObjectWidth);
+		);
+		mul(flyingImgHeight,get(layer[displayedStandardImage].fullheight),get(tempDisplayedImageObjectWidth));
+		div(flyingImgHeight,get(layer[displayedStandardImage].fullwidth));
+		Math.round(flyingImgHeight);
+		set(layer[displayedStandardImage].imgwidth , get(tempDisplayedImageObjectWidth));
+		set(layer[displayedStandardImage].imgheight , get(flyingImgHeight));
+        ,
+		set(tempDisplayedImageObjectWidth, get(layer[displayedStandardImage].imgwidth));
+		set(tempDisplayedImageObjectHeight, get(layer[displayedStandardImage].imgheight));
+		indexoftxt(tempDisplayedImageObjectWidthPercent, get(tempDisplayedImageObjectWidth), "%");
+		indexoftxt(tempDisplayedImageObjectHeightPercent, get(tempDisplayedImageObjectHeight), "%");
+		if(tempDisplayedImageObjectWidthPercent GT 0,
+		txtreplace(tempDisplayedImageObjectWidth, '%', '');
+		mul(tempDisplayedImageObjectWidth, get(stagewidth));
+		div(tempDisplayedImageObjectWidth, 100);
+		Math.round(tempDisplayedImageObjectWidth);
+		);
+		if(tempDisplayedImageObjectHeightPercent GT 0,
+		txtreplace(tempDisplayedImageObjectHeight, '%', '');
+		mul(tempDisplayedImageObjectHeight, get(stageheight));
+		div(tempDisplayedImageObjectHeight, 100);
+		Math.round(tempDisplayedImageObjectHeight);
+		);
+		set(layer[displayedStandardImage].imgwidth , get(tempDisplayedImageObjectWidth));
+		set(layer[displayedStandardImage].imgheight, get(tempDisplayedImageObjectHeight));
+        );
+		);
+		,
+		set(layer[displayedStandardImage].imgwidth , get(layer[displayedStandardImage].fullwidth));
+		set(layer[displayedStandardImage].imgheight, get(layer[displayedStandardImage].fullheight));
+		);
+		
+		set(resizedwidth, get(layer[displayedStandardImage].imgwidth));
+		set(resizedheight, get(layer[displayedStandardImage].imgheight));
+		if(layer[displayedStandardImage].applyratio,
+		sub(resizedstagewidth, get(stagewidth), get(layer[displayedStandardImage].x));
+		sub(resizedstageheight, get(stageheight), get(layer[displayedStandardImage].y));
+		Math.abs(resizedstagewidth);
+		Math.abs(resizedstageheight);
+		if(resizedwidth GT resizedstagewidth,
+        mul(tempresizedheight, get(resizedheight), get(resizedstagewidth));
+        div(tempresizedheight, get(resizedwidth));
+        Math.round(tempresizedheight);
+        set(resizedwidth, get(resizedstagewidth));
+        set(resizedheight, get(tempresizedheight));
+		);
+		if(resizedheight GT resizedstageheight,
+        mul(tempresizedwidth, get(resizedwidth), get(resizedstageheight));
+        div(tempresizedwidth, get(resizedheight));
+        Math.round(tempresizedwidth);
+        set(resizedheight, get(resizedstageheight));
+        set(resizedwidth, get(tempresizedwidth));
+		);
+		);
+		
+		if(layer[displayedStandardImage].animated,
+		set(layer[displayedStandardImage].animated, false);
+		tween(layer[displayedStandardImage].width , get(resizedwidth), 1, easeOutQuad);
+		tween(layer[displayedStandardImage].height, get(resizedheight), 1, easeOutQuad);
+		,
+		set(layer[displayedStandardImage].width , get(resizedwidth));
+		set(layer[displayedStandardImage].height, get(resizedheight));
+		);
+		if(layer[displayedStandardImage].overlay,set(layer[displayedStandardImageOverlay].visible, true););
+		set(layer[displayedStandardImage].visible, true);
+		,
+		delayedcall(0.2,resizeDisplayedImageObject(););
+		);
+	</action>
+	<events name="displayedImageObjectEvents" keep="true" onremovedisplayedobject="displayedImageObjectOnRemoveDisplayedObject" onresize="if(layer[displayedStandardImage],resizeDisplayedImageObject());" />
+	<action name="displayedImageObjectOnRemoveDisplayedObject">
+		ifnot(layer[displayedStandardImage].currentCall,if(layer[displayedStandardImage].visible,resumeautorotation(forcehotspot);
+		
+		if(layer[displayedStandardImage].overlay,removelayer(displayedStandardImageOverlay););
+		removelayer(displayedStandardImage);
+		););
+		
+	</action>
+	
+	
+	
+</krpano>
