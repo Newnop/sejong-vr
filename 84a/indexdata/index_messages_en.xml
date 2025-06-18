@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano>
+
+
+  <data name="en_project_title"><![CDATA[세종 에버파크 84A]]></data>
+
+
+  <data name="en_panogroup84_title"><![CDATA[84A]]></data>
+
+  <data name="en_pano85_title"><![CDATA[거실]]></data>
+  <data name="en_spotpoint134_tooltip"><![CDATA[주방]]></data>
+  <data name="en_spotpoint135_tooltip"><![CDATA[침실1]]></data>
+  <data name="en_spotpoint136_tooltip"><![CDATA[알파룸]]></data>
+  <data name="en_spotpoint137_tooltip"><![CDATA[다용도실]]></data>
+  <data name="en_spotpoint138_tooltip"><![CDATA[펜트리]]></data>
+  <data name="en_spotpoint139_tooltip"><![CDATA[현관]]></data>
+  <data name="en_pano92_title"><![CDATA[주방]]></data>
+  <data name="en_spotpoint140_tooltip"><![CDATA[알파룸]]></data>
+  <data name="en_spotpoint141_tooltip"><![CDATA[다용도실]]></data>
+  <data name="en_spotpoint142_tooltip"><![CDATA[거실]]></data>
+  <data name="en_pano93_title"><![CDATA[침실1]]></data>
+  <data name="en_spotpoint143_tooltip"><![CDATA[화장대]]></data>
+  <data name="en_spotpoint144_tooltip"><![CDATA[베란다]]></data>
+  <data name="en_spotpoint145_tooltip"><![CDATA[거실]]></data>
+  <data name="en_pano94_title"><![CDATA[침실2]]></data>
+  <data name="en_spotpoint146_tooltip"><![CDATA[현관]]></data>
+  <data name="en_spotpoint147_tooltip"><![CDATA[주방]]></data>
+  <data name="en_spotpoint166_tooltip"><![CDATA[펜트리]]></data>
+  <data name="en_pano95_title"><![CDATA[침실3]]></data>
+  <data name="en_spotpoint148_tooltip"><![CDATA[현관]]></data>
+  <data name="en_pano91_title"><![CDATA[알파룸]]></data>
+  <data name="en_spotpoint149_tooltip"><![CDATA[주방]]></data>
+  <data name="en_pano88_title"><![CDATA[드레스룸]]></data>
+  <data name="en_spotpoint150_tooltip"><![CDATA[화장대]]></data>
+  <data name="en_pano86_title"><![CDATA[공용욕실]]></data>
+  <data name="en_spotpoint151_tooltip"><![CDATA[현관]]></data>
+  <data name="en_spotpoint152_tooltip"><![CDATA[침실3]]></data>
+  <data name="en_spotpoint153_tooltip"><![CDATA[거실]]></data>
+  <data name="en_pano90_title"><![CDATA[부부욕실]]></data>
+  <data name="en_spotpoint154_tooltip"><![CDATA[화장대]]></data>
+  <data name="en_spotpoint155_tooltip"><![CDATA[침실1]]></data>
+  <data name="en_pano97_title"><![CDATA[현관]]></data>
+  <data name="en_spotpoint156_tooltip"><![CDATA[공용욕실]]></data>
+  <data name="en_spotpoint157_tooltip"><![CDATA[거실]]></data>
+  <data name="en_spotpoint158_tooltip"><![CDATA[침실2]]></data>
+  <data name="en_spotpoint159_tooltip"><![CDATA[침실3]]></data>
+  <data name="en_pano89_title"><![CDATA[베란다]]></data>
+  <data name="en_spotpoint160_tooltip"><![CDATA[침실1]]></data>
+  <data name="en_spotpoint161_tooltip"><![CDATA[화장대]]></data>
+  <data name="en_pano87_title"><![CDATA[다용도실]]></data>
+  <data name="en_spotpoint162_tooltip"><![CDATA[주방]]></data>
+  <data name="en_spotpoint163_tooltip"><![CDATA[알파룸]]></data>
+  <data name="en_pano96_title"><![CDATA[펜트리]]></data>
+  <data name="en_spotpoint164_tooltip"><![CDATA[거실]]></data>
+  <data name="en_spotpoint165_tooltip"><![CDATA[침실2]]></data>
+  <data name="en_pano98_title"><![CDATA[화장대]]></data>
+  <data name="en_spotpoint167_tooltip"><![CDATA[부부욕실]]></data>
+  <data name="en_spotpoint168_tooltip"><![CDATA[침실1]]></data>
+  <data name="en_spotpoint169_tooltip"><![CDATA[드레스룸]]></data>
+
+
+
+
+
+	<data name="en_panogroup84_floor_title"><![CDATA[84A]]></data>
+	<data name="en_spotmap119_tooltip"><![CDATA[거실]]></data>
+	<data name="en_spotmap120_tooltip"><![CDATA[주방]]></data>
+	<data name="en_spotmap121_tooltip"><![CDATA[침실1]]></data>
+	<data name="en_spotmap122_tooltip"><![CDATA[침실2]]></data>
+	<data name="en_spotmap123_tooltip"><![CDATA[침실3]]></data>
+	<data name="en_spotmap124_tooltip"><![CDATA[알파룸]]></data>
+	<data name="en_spotmap125_tooltip"><![CDATA[드레스룸]]></data>
+	<data name="en_spotmap126_tooltip"><![CDATA[공용욕실]]></data>
+	<data name="en_spotmap128_tooltip"><![CDATA[현관]]></data>
+	<data name="en_spotmap129_tooltip"><![CDATA[베란다]]></data>
+	<data name="en_spotmap130_tooltip"><![CDATA[다용도실]]></data>
+	<data name="en_spotmap131_tooltip"><![CDATA[펜트리]]></data>
+	<data name="en_spotmap132_tooltip"><![CDATA[화장대]]></data>
+	<data name="en_spotmap133_tooltip"><![CDATA[부부욕실]]></data>
+
+  <data name="en_SkinPlusprevSceneTip"><![CDATA[Previous panorama]]></data>
+  <data name="en_SkinPlusnextSceneTip"><![CDATA[Next panorama]]></data>
+  <data name="en_SkinPluszoomInTip"><![CDATA[Zoom in]]></data>
+  <data name="en_SkinPluszoomOutTip"><![CDATA[Zoom out]]></data>
+  <data name="en_SkinPlusopenFsTip"><![CDATA[Enter fullscreen]]></data>
+  <data name="en_SkinPluscloseFsTip"><![CDATA[Exit fullscreen]]></data>
+  <data name="en_SkinPlusautorotateOnTip"><![CDATA[Start autorotation]]></data>
+  <data name="en_SkinPlusautorotateOffTip"><![CDATA[Stop autorotation]]></data>
+  <data name="en_SkinPlussoundsOnTip"><![CDATA[Start sounds]]></data>
+  <data name="en_SkinPlussoundsOffTip"><![CDATA[Stop sounds]]></data>
+  <data name="en_SkinPluscode"><![CDATA[ptpkimage17]]></data>
+  <data name="en_debugPanoramaDirectoriesseparatorString"><![CDATA[;]]></data>
+  <data name="en_debugPanoramaDirectoriesseparatorStringG"><![CDATA[;]]></data>
+  <data name="en_callActionsOnTourEvents2ontourstartaction108621krcallkrpanocode"><![CDATA[]]></data>
+
+
+  <data name="en_vr_setup_hmd0"><![CDATA[SELECT YOUR HMD]]></data>
+  <data name="en_vr_setup_advanced"><![CDATA[ADVANCED SETTINGS]]></data>
+  <data name="en_vr_setup_title"><![CDATA[WEB VR SETTINGS]]></data>
+  <data name="en_vr_setup_dvn1"><![CDATA[Device:]]></data>
+  <data name="en_vr_setup_siz1"><![CDATA[Screen size:]]></data>
+  <data name="en_vr_setup_ipd1"><![CDATA[IPD:]]></data>
+  <data name="en_vr_setup_hmd1"><![CDATA[HMD:]]></data>
+  <data name="en_vr_setup_hmd3"><![CDATA[Customize]]></data>
+  <data name="en_vr_setup_cal"><![CDATA[Calibrate gyroscope]]></data>
+  <data name="en_vr_setup_sav"><![CDATA[SAVE]]></data>
+  <data name="en_vr_setup_rst"><![CDATA[RESET]]></data>
+  <data name="en_vr_setup_simple"><![CDATA[SIMPLE]]></data>
+  <data name="en_vr_setup_cls"><![CDATA[CLOSE]]></data>
+  <data name="en_vr_setup_m31"><![CDATA[HMD SETTINGS]]></data>
+  <data name="en_vr_setup_fov1"><![CDATA[FOV:]]></data>
+  <data name="en_vr_setup_dst1"><![CDATA[Distortion:]]></data>
+  <data name="en_vr_setup_d2tx"><![CDATA[Distortion 2:]]></data>
+  <data name="en_vr_setup_vig1"><![CDATA[Vignette:]]></data>
+  <data name="en_vr_setup_cac1"><![CDATA[Chromatic aberration:]]></data>
+  <data name="en_vr_setup_olp1"><![CDATA[Overlap:]]></data>
+  <data name="en_vr_setup_m35"><![CDATA[RETURN]]></data>
+  <data name="en_vr_setup_cb1"><![CDATA[GYROSCOPE]]></data>
+  <data name="en_vr_setup_cb2"><![CDATA[Place the device on a flat and[br]stable surface and tab CALIBRATE[br]to correct a gyroscope drifting.]]></data>
+  <data name="en_vr_setup_cb3"><![CDATA[CALIBRATE]]></data>
+  <data name="en_vr_setup_cb4"><![CDATA[RESET]]></data>
+  <data name="en_vr_setup_cb5"><![CDATA[RETURN]]></data>
+  <data name="en_vr_setup_cb6"><![CDATA[Calibrating...]]></data>
+  <data name="en_vr_setup_cb7"><![CDATA[Successful calibration]]></data>
+  <data name="en_vr_setup_cb8"><![CDATA[Calibration failed]]></data>
+  <data name="en_vr_setup_unavailable"><![CDATA[VR mode[br]is unavailable on your device]]></data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</krpano>
